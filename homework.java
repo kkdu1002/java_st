@@ -1,34 +1,34 @@
-package jang8;
+package jang7;
 
-import java.util.Random;
+import java.util.Scanner;
 
 public class homework 
 {
-	public static void main(String[] args) 
+	public static void main(String[] args)
 	{
-		Random r = new Random();
-		int big , small, i;
-
-		for(i = 1; i <= 15; i++) 
-		{	// 대문자 = 65 ~ 90
-			big = r.nextInt(26) + 65;
-			System.out.printf("%s\t",(char)big);
-			if(i % 5 == 0) 
-			{
-				System.out.println();
-			}		
-		}
+		Scanner input = new Scanner(System.in);
 		
-		System.out.printf("\n");
+		int people , kor , math , en , all = 0 , all_1 = 0;
+		int start;
+		System.out.print("인원수 : ");
+		people = input.nextInt();
 		
-		for(i = 1; i <= 15; i++) 
-		{	// 소문자 97 ~ 122
-			small = r.nextInt(26) + 97;
-			System.out.printf("%s\t",(char)small);
-			if(i % 5 == 0) 
-			{
-				System.out.println();
-			}
+		
+		for (start = 1; start <= people;start++) 
+		{
+			System.out.printf("%d) 국어점수 :",start);
+			kor = input.nextInt();
+			System.out.printf("%d) 영어점수 :",start);
+			en = input.nextInt();
+			System.out.printf("%d) 수학점수 :",start);
+			math = input.nextInt();
+			all += kor + en + math;	
+			System.out.printf("%d) 평균 : %d\n",start ,all / 3);
+			System.out.printf("\n");
+			all_1 += kor + en + math;		
+			all = 0;
 		}
+		System.out.printf("전체합계 : %d\n",all_1);
+		System.out.printf("전체평균 : %d\n",all_1 / 3);
 	}
 }
