@@ -12,6 +12,7 @@ public class Math_homework
 		System.out.println("암산훈련!!!\n");
 A:		while(true)
 		{
+			boolean x = true;
 			int ran_sum = 0;
 			int ran1 = (int)(Math.random() * 10) + 1;
 			int ran2 = (int)(Math.random() * 10) + 1;
@@ -31,13 +32,23 @@ A:		while(true)
 			}
 			System.out.println();
 			
-			System.out.print("다시 한번? <Yes-1 / NO-0> : ");
-			
-			replay = input.nextInt();
-			if(replay == 0)
+			while(x)
 			{
-				System.out.println("그만~~");
-				break A;
+				System.out.print("다시 한번? <Yes-1 / NO-0> : ");
+				replay = input.nextInt();
+				if(replay == 0)
+				{
+					System.out.println("그만~~");
+					break A;
+				}
+				else if(replay != 1)
+				{
+					System.out.println("잘못된 입력입니다.");
+				}
+				else if(replay == 1)
+				{
+					x = false;
+				}
 			}
 		}	
 	}
